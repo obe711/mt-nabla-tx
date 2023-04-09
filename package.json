@@ -1,0 +1,23 @@
+{
+  "name": "mt-nabla-tx",
+  "version": "1.0.0",
+  "description": "Nabla tx module for sending data to Moontower Nabla servers",
+  "main": "./index.js",
+  "author": "Obediah Klopfenstein",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "start": "cross-env NODE_ENV=development nodemon src/index.js",
+    "start:dev":  "cross-env NODE_ENV=development nodemon src/client.js",
+    "dev":  "cross-env NODE_ENV=development nodemon src/dev.js"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.0.3",
+    "joi": "^17.9.1",
+    "winston": "^3.8.2"
+  }
+}
