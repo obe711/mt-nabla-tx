@@ -25,8 +25,8 @@ class NablaTx extends EventEmitter {
   }
 
   systemStatus(statusObject) {
-    const { hostname } = statusObject;
-    const messageMeta = { nablaId: "system", origin: hostname || this.ip }
+    const { hostname, provider } = statusObject;
+    const messageMeta = { nablaId: "system", origin: hostname || this.ip, provider }
     Object.assign(statusObject, { nabla: messageMeta });
     this.nablaClient.clientSend(statusObject);
   }
