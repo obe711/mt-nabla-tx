@@ -21,7 +21,7 @@ class NablaTx extends EventEmitter {
     const { type } = apiLogObject;
     const messageMeta = { nablaId: type, origin: siteName }
     Object.assign(apiLogObject, { nabla: messageMeta });
-    this.nablaClient.clientSend(message);
+    this.nablaClient.clientSend(apiLogObject);
   }
 
   accessLog(logObject) {
