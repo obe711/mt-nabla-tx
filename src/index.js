@@ -17,6 +17,12 @@ class NablaTx extends EventEmitter {
     this.logger.info(`TX Created - ${this.ip}:${this.port}`);
   };
 
+  pm2Log(siteName, apiLogObject) {
+    const { type } = apiLogObject;
+    const message = { nablaId: type, origin: siteName, message: apiLogObject }
+    this.nablaClient.clientSend(message);
+  }
+
   accessLog(logObject) {
     const { host } = logObject;
     const messageMeta = { nablaId: "access", origin: host || this.ip }
